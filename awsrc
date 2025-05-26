@@ -1,0 +1,10 @@
+# Aliases
+alias sts="aws sts get-caller-identity"
+
+
+$ Functions
+function dami() {
+    local ami=$1
+    local region=$2
+    aws ec2 describe-images --image-ids $ami --region $region | jq -r ".Images[0].Name"
+}
