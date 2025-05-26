@@ -1,0 +1,8 @@
+# Aliases
+alias k=kubectl
+
+# Functions
+function get_instance_id() {
+    local node_name=$1
+    kubectl get node "$node_name" -o yaml | grep providerID | cut -d'/' -f5
+}
