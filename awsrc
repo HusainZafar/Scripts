@@ -18,3 +18,8 @@ function ti() {
     local instanceId=$2
     aws ec2 terminate-instances --region $region --instance-ids $instanceId | jq -r '.TerminatingInstances[].CurrentState.Name'
 }
+
+function get_instance_id() {
+    local node_name=$1
+    kubectl get node "$node_name" -o yaml | grep providerID | cut -d'/' -f5
+}
