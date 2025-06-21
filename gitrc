@@ -1,1 +1,7 @@
-
+alias gs="git status"
+alias gl="git log"
+alias gd="git diff"
+alias gdc="git diff --cached"
+alias gr="git stash && git rebase && git stash apply"
+alias gcm="git checkout mainline"
+alias gc="git checkout"
