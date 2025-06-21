@@ -1,10 +1,20 @@
 # Aliases
 alias sts="aws sts get-caller-identity"
 
-
 $ Functions
 function dami() {
-    local ami=$1
-    local region=$2
-    aws ec2 describe-images --image-ids $ami --region $region | jq -r ".Images[0].Name"
+    local region=$1
+    local ami=$2
+    aws ec2 describe-images --region $region --image-ids $ami | jq -r ".Images[0].Name"
+}
+
+function di() {
+    local region=$1
+    aws ec2 describe-instances --region $region | jq -r '.Reservations[].Instances[].InstanceId'
+}
+
+function ti() {
+    local region=$1
+    local instanceId=$2
+    aws ec2 terminate-instances --region $region --instance-ids $instanceId | jq -r '.TerminatingInstances[].CurrentState.Name'
 }
