@@ -10,7 +10,7 @@ function dami() {
 
 function di() {
     local region=$1
-    aws ec2 describe-instances --region $region | jq -r '.Reservations[].Instances[].InstanceId'
+    aws ec2 describe-instances --region $region --filters "Name=instance-state-name,Values=running" | jq -r '.Reservations[].Instances[].InstanceId'
 }
 
 function ti() {
