@@ -9,3 +9,8 @@ function get_instance_id() {
     local node_name=$1
     kubectl get node "$node_name" -o yaml | grep providerID | cut -d'/' -f5
 }
+
+function provider() {
+    local pod=$1
+    k get node $(k get pod $pod -o json | jq -r .spec.nodeName) -o json | jq -r .spec.providerID | cut -d'/' -f5 | cut -d'-' -f2
+}
