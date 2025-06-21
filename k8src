@@ -1,6 +1,9 @@
 # Aliases
 alias k=kubectl
 
+# Set your selected editor for `kubectl edit <resource>`
+export KUBE_EDITOR="vim"
+
 # Functions
 function get_instance_id() {
     local node_name=$1
