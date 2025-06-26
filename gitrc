@@ -1,4 +1,5 @@
 alias gs="git status"
+alias gb="git branch"
 alias gl="git log"
 alias gd="git diff"
 alias gdc="git diff --cached"
