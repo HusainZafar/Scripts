@@ -18,3 +18,17 @@ function ti() {
     local instanceId=$2
     aws ec2 terminate-instances --region $region --instance-ids $instanceId | jq -r '.TerminatingInstances[].CurrentState.Name'
 }
+
+function tai() {
+    local region=${1:-us-west-2}
+    for i in $(di $region)
+    do
+        ti $i $region
+    done
+}
+
+function ssmc() {
+    local instanceId=$1
+    local region=${2:-us-west-2}
+    aws ssm start-session --target $instanceId --region $region
+}
