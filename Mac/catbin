@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+# Usage: catbin notify
+
 set -e
 set -u
 
