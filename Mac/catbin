@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+set -e
+set -u
+
+location=$(command -v "$1")
+{ echo "File: $location"; echo; cat "$location"; } | less
