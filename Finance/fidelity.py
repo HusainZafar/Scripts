@@ -3,10 +3,10 @@ import math
 import pandas as pd
 
 # Read the CSV file
-df = pd.read_csv('Portfolio_Positions_Nov-01-2025.csv')
+df = pd.read_csv("~/Downloads/Portfolio_Positions_Jan-15-2026.csv", index_col=False)
 
 # Group by account type and sum
-account_types = {'Individual': "Individual", 'BrokerageLink': "BrokerageLink", 'AMAZON 401(K) PLAN': "401k", 'ROTH IRA': "RothIRA", 'Health Savings Account': "HSA"}
+account_types = {'Individual': "Individual", 'BrokerageLink': "BrokerageLink", 'AMAZON 401(K) PLAN': "401k", 'ROTH IRA': "RothIRA", 'Health Savings Account': "HSA", "Traditional IRA": "TradIRA"}
 account_totals = {}
 
 for account_type in account_types:
