@@ -1,3 +1,5 @@
+# There is a limit of 1000 instance profiles per AWS account
+
 aws iam list-instance-profiles --output json | \
   jq -r '.InstanceProfiles[].InstanceProfileName' | \
   grep -E 'regex-goes-here' | \
