@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Gemini Page Summarizer
+// @name         Web Page Summarizer
 // @namespace    https://example.com/gemini-summarizer
 // @version      1.0
 // @description  Press Alt+S to summarize the current page with Gemini, shown in a floating box
